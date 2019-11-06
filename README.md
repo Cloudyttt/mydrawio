@@ -6,7 +6,7 @@ my-drawio is a secondary development of [draw.io](https://www.draw.io/).
 
 ## What new?
 1. Removed some unusual features;
-2. Simplify the Graphics library、Menu;
+2. Simplify the Graphics library and Menu;
 3. Add a Picture magnifier;
 4. Add a Screenshot tool;
 5. Graphics move more smoothly;
