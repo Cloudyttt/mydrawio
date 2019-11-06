@@ -1,0 +1,250 @@
+<!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=5,IE=9"><![endif]-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>司法鉴定辅助应用系统 - 碰撞科技</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="msapplication-config" content="images/browserconfig.xml">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#d89000">
+    <meta name="renderer" content="webkit">
+    <script type="text/javascript">
+      var urlParams = (function () {
+        var result = new Object();
+        var params = window.location.search.slice(1).split('&');
+
+        for (var i = 0; i < params.length; i++) {
+          idx = params[i].indexOf('=');
+
+          if (idx > 0) {
+            result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
+          }
+        }
+
+        return result;
+      })();
+
+      urlParams['local'] = 1;
+      urlParams['dev'] = 1;
+      //urlParams['tableLayout'] = '1';
+    </script>
+    <link rel="stylesheet" type="text/css" href="styles/grapheditor.css">
+    <style type="text/css">
+        body {
+            overflow: hidden;
+        }
+
+        div.picker {
+            z-index: 10007;
+        }
+
+        .geSidebarContainer .geTitle input {
+            font-size: 8pt;
+            color: #606060;
+        }
+
+        .geBlock {
+            z-index: -3;
+            margin: 100px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .geBlock h1, .geBlock h2 {
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+
+        .geEditor ::-webkit-scrollbar {
+            width: 14px;
+            height: 14px;
+        }
+
+        .geEditor ::-webkit-scrollbar-track {
+            background-clip: padding-box;
+            border: solid transparent;
+            border-width: 1px;
+        }
+
+        .geEditor ::-webkit-scrollbar-corner {
+            background-color: transparent;
+        }
+
+        .geEditor ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, .1);
+            background-clip: padding-box;
+            border: solid transparent;
+            border-radius: 10px;
+        }
+
+        .geEditor ::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        .geTemplate {
+            border: 1px solid transparent;
+            display: inline-block;
+            _display: inline;
+            vertical-align: top;
+            border-radius: 3px;
+            overflow: hidden;
+            font-size: 14pt;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .geFooterContainer div.geSocialFooter a {
+            display: inline;
+            padding: 0px;
+        }
+
+        .geFooterContainer div.geSocialFooter a img {
+            margin-top: 10px;
+            opacity: 0.5;
+        }
+
+        .geFooterContainer div.geSocialFooter a img:hover {
+            opacity: 1;
+        }
+
+        .geFooterContainer > div#geFooter > img {
+            opacity: 0.5;
+            border: 1px solid transparent;
+            cusor: pointer;
+            margin-top: 3px;
+            margin-right: 6px;
+            position: absolute;
+            right: 4px;
+            top: 12px;
+            padding: 1px;
+            cursor: pointer;
+        }
+
+        .geFooterContainer > div#geFooter > img:hover {
+            opacity: 1;
+        }
+    </style>
+
+    <script type="text/javascript">
+      /**
+       * 同步向页面添加脚本。
+       */
+      function mxscript(src, onLoad, id, dataAppKey, noWrite) {
+        if (onLoad != null || noWrite) {
+          var s = document.createElement('script');
+          s.setAttribute('type', 'text/javascript');
+          s.setAttribute('src', src);
+          var r = false;
+
+          if (id != null) {
+            s.setAttribute('id', id);
+          }
+
+          if (dataAppKey != null) {
+            s.setAttribute('data-app-key', dataAppKey);
+          }
+
+          if (onLoad != null) {
+            s.onload = s.onreadystatechange = function () {
+              if (!r && (!this.readyState || this.readyState == 'complete')) {
+                r = true;
+                onLoad();
+              }
+            };
+          }
+
+          var t = document.getElementsByTagName('script')[0];
+          t.parentNode.insertBefore(s, t);
+        } else {
+          document.write('<script src="' + src + '"' + ((id != null) ? ' id="' + id + '" ' : '') +
+            ((dataAppKey != null) ? ' data-app-key="' + dataAppKey + '" ' : '') + '></scr' + 'ipt>');
+        }
+      };
+
+      /**
+       * Asynchronously adds scripts to the page.
+       */
+      function mxinclude(src) {
+        var g = document.createElement('script');
+        g.type = 'text/javascript';
+        g.async = true;
+        g.src = src;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(g, s);
+      };
+
+      // Checks for local storage
+      var isLocalStorage = true;
+
+
+      var t0 = new Date();
+
+      // Changes paths for local development environment
+      if (urlParams['dev'] == '1') {
+        var mxDevUrl = document.location.origin;//document.location.protocol + ;
+        // console.log('mxDevUrl:', mxDevUrl);
+        //console.log(document.location);
+        // 下列变量会被动态载入的js引用，不可删除。
+        var drawDevUrl = mxDevUrl + '/';
+        var geBasePath = mxDevUrl + '/js/mxgraph';
+        var mxBasePath = mxDevUrl + '/js/mxclient';
+
+        /*if (document.location.protocol == 'file:')
+        {
+            mxDevUrl = '../../mxgraph2';
+
+            // Forces includes for dev environment in node.js
+            mxForceIncludes = true;
+        }*/
+
+        mxscript(mxDevUrl + '/js/myapp/Init.js');
+        mxscript(mxDevUrl + '/js/mxgraph/Init.js');
+        mxscript(mxDevUrl + '/js/mxclient/js/mxClient.js');
+
+        // Adds all JS code that depends on mxClient. This indirection via Devel.js is
+        // required in some browsers to make sure mxClient.js (and the files that it
+        // loads asynchronously) are available when the code loaded in Devel.js runs.
+        // mxscript(mxDevUrl + '/js/diagramly/Devel.js');
+        mxscript(mxDevUrl + '/js/myapp/Devel.js');
+      } else {
+        mxscript('js/app.min.js');
+      }
+
+      // Electron
+      if (window && window.process && window.process.type) {
+        mxscript('js/diagramly/ElectronApp.js');
+      }
+
+      // Adds basic error handling
+      window.onerror = function () {
+        var status = document.getElementById('geStatus');
+
+        if (status != null) {
+          status.innerHTML = 'Page could not be loaded. Please try refreshing.';
+        }
+      };
+    </script>
+</head>
+<body class="geEditor">
+<div id="geInfo">
+    <div class="geBlock" style="text-align:center;min-width:50%;">
+        <h1>司法鉴定笔迹鉴定辅助系统</h1>
+        <p>技术支持：碰撞科技</p>
+        <h2 id="geStatus">载入中，请稍候...</h2>
+        <p>
+            建议使用Chrome浏览器，不支持IE。
+        </p>
+    </div>
+</div>
+<script type="text/javascript">
+  /**
+   * Main
+   */
+  App.main();
+</script>
+</body>
+</html>
