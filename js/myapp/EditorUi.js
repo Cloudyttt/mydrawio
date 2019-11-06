@@ -3,7 +3,7 @@
  * Copyright (c) 2006-2017, Gaudenz Alder
  */
 (function () {
-  EditorUi.prototype.hsplitPosition = 80;
+  EditorUi.prototype.hsplitPosition = 140;
   EditorUi.prototype.splitSize = 0;
   /**
    * Version

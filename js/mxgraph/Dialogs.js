@@ -2779,7 +2779,7 @@ let ImageWindow = function (editorUi, x, y, w, h) {
     ctx.restore();
     // rectArr = [];
     let dataURL = myCanvas.toDataURL("image/jpg").replace("image/jpg", "image/octet-stream");
-    saveFile(dataURL, '司法鉴定.jpg');
+    saveFile(dataURL, 'image.jpg');
     myCanvas.width = originWidth;
     myCanvas.height = originHeight;
     ctx.drawImage(img, 0, 0, myCanvas.width * scaleX, myCanvas.height * scaleX);  // 将图片加入到canvas中

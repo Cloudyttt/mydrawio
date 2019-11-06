@@ -6,7 +6,7 @@
   /**
    * Specifies the app name. Default is document.title.
    */
-  Editor.prototype.appName = '司法鉴定研究院';
+  Editor.prototype.appName = 'my-Drawio';
 
   /**
    * Known extensions for own files.

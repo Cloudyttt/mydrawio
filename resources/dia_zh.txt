@@ -1,6 +1,6 @@
 # *DO NOT DIRECTLY EDIT THIS FILE, IT IS AUTOMATICALLY GENERATED AND IT IS BASED ON:*
 # https://docs.google.com/spreadsheet/ccc?key=0AmQEO36liL4FdDJLWVNMaVV2UmRKSnpXU09MYkdGbEE
-myapp=特征对比表
+myapp=MyDrawio
 adjustSize=调整图片大小
 grayscale=灰度
 aaa=1

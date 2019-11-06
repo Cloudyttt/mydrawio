@@ -1,6 +1,5 @@
 (function () {
-  Sidebar.prototype.yinzhang = GRAPH_IMAGE_PATH + '/myapp/overlapLayer.png';
-  Sidebar.prototype.magnify = GRAPH_IMAGE_PATH + '/myapp/magnifier.png';
+  Sidebar.prototype.magnify = GRAPH_IMAGE_PATH + '/Magnifier.png';
 
   /**
    * Aliases for IDs in the libs parameter.
@@ -182,7 +181,7 @@
       // 曲线1
       this.addEntry('curve', mxUtils.bind(this, function () {
         var cell = new mxCell('', new mxGeometry(0, 0, 50, 50), 'curved=1;endArrow=openAsync;strokeColor=#FF0000;rotatable=1;dashed=0;');
-        cell.geometry.setTerminalPoint(new mxPoint(20, 50), true); //
+        cell.geometry.setTerminalPoint(new mxPoint(20, 50), true);
         cell.geometry.setTerminalPoint(new mxPoint(20, 0), false);
         cell.geometry.points = [new mxPoint(-30, 30)];
         cell.geometry.relative = true;
@@ -190,17 +189,6 @@
 
         return this.createEdgeTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, '曲线（顺）');
       })),
-
-      /*this.addEntry('curve', mxUtils.bind(this, function () {
-        var cell = new mxCell('', new mxGeometry(0, 0, 50, 50), 'curved=1;endArrow=openAsync;strokeColor=#FF0000;rotatable=1;');
-        cell.geometry.setTerminalPoint(new mxPoint(50, 50), true); //
-        cell.geometry.setTerminalPoint(new mxPoint(50, 0), false);
-        cell.geometry.points = [new mxPoint(0, 0), new mxPoint(0, 50)];
-        cell.geometry.relative = true;
-        cell.edge = true;
-
-        return this.createEdgeTemplateFromCells([cell], cell.geometry.width, cell.geometry.height, '曲线（顺）');
-      })),*/
 
       // 曲线2
       this.addEntry('curve', mxUtils.bind(this, function () {
