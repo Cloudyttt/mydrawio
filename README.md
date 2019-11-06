@@ -2,7 +2,7 @@
 
 ## About
 my-Drawio is a simplified diagramming web site that delivers the source in this project.
-my-drawio is a secondary development of draw.io.
+my-drawio is a secondary development of [draw.io](https://www.draw.io/).
 
 ## What new?
 1. Removed some unusual features;
